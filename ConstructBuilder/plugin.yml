@@ -1,0 +1,35 @@
+name: ConstructBuilder
+version: RELEASE
+author: FloobyFlaps
+main: de.floobyflaps.constructbuilder.ConstructBuilder
+
+commands:
+  CBuild:
+    usage: /CBuild <Parameter...>
+    description: Ist das Kommando zum erstellen von Konstrukten
+
+permissions:
+  cbuild.*:
+    description: Admin Rechte fuer dieses Plugin
+    default: op
+    children:
+      cbuild.random: true
+      cbuild.konstrukte: true
+      cbuild.animation: true
+      cbuild.vorlage: true
+      cbuild.loeschen: true
+  cbuild.random:
+    description: Erlaubt den CBuild Random Befehl
+    default: false
+  cbuild.konstrukte:
+    description: Erlaubt den CBuild Konstrukte Befehl
+    default: false
+  cbuild.animation:
+    description: Erlaubt den CBuild Animation Befehl
+    default: false
+  cbuild.vorlage:
+    description: Erlaubt den CBuild Vorlagen Befehl
+    default: false
+  cbuild.loeschen:
+    description: Erlaubt den CBuild Loeschen Befehl
+    default: false
