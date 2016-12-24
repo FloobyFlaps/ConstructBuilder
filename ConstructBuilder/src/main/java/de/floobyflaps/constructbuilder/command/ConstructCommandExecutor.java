@@ -117,7 +117,6 @@ public class ConstructCommandExecutor implements CommandExecutor, TabCompleter{
 							try{
 								new TemplateCreator(args[1], Loc1, Loc2);
 							}catch(Exception e){
-								e.printStackTrace();
 								p.sendMessage(PARAGRAPH+"cVorlage konnte nicht erstellt werden.");
 								return true;
 							}
@@ -136,7 +135,7 @@ public class ConstructCommandExecutor implements CommandExecutor, TabCompleter{
 					if (p.hasPermission(PERM_ADMIN) || p.hasPermission(PERM_RANDOM)) {
 						Integer i = null;
 						ArrayList<Vorlage> a = (ArrayList<Vorlage>) TemplateCreator.getTemplates();
-						int i1 = (int) ((Math.random() % a.size())); 
+						int i1 = (int) ((Math.random() * a.size())); 
 						Vorlage v = a.get(i1);
 						try{
 							i = Integer.parseInt(args[1]);
@@ -175,6 +174,7 @@ public class ConstructCommandExecutor implements CommandExecutor, TabCompleter{
 						Animation a = ConstructBuilder.getAnimationOverName(args[1]);
 						if(a != null){
 							ConstructBuilder.Animationstyp = a.getAnimationName();
+							p.sendMessage(PARAGRAPH+"aAnimation gesetzt!");
 						}else{
 							p.sendMessage(PARAGRAPH+"7Die Animation existiert nicht!");
 						}
